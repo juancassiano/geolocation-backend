@@ -42,6 +42,20 @@ app.post("/route", async (request, response) => {
   // return response.json(geolocationURL.data.results[0].geometry.location);
 });
 
+function calculateDistance() {
+  const calc = Math.sqrt(
+    (adresses[0].latitude - adresses[0].longitude) ** 2 +
+      (adresses[1].latitude - adresses[1].longitude) ** 2
+  );
+
+  return calc;
+}
+
+app.get("/result", (request, response) => {
+  const result = calculateDistance();
+  return response.json(result);
+});
+
 app.get("/route", async (request, response) => {
   return response.json(adresses);
 });
