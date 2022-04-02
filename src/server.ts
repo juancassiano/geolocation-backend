@@ -48,7 +48,7 @@ function calculateDistance() {
 app.get("/result", (request, response) => {
   const distance = calculateDistance();
 
-  return response.json({ distance });
+  return response.json({ adresses, distance });
 });
 
 app.get("/route", async (request, response) => {
