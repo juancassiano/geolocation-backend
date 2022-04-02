@@ -40,8 +40,9 @@ function calculateDistance() {
     (adresses[0].latitude - adresses[0].longitude) ** 2 +
       (adresses[1].latitude - adresses[1].longitude) ** 2
   );
+  const result = `Distância do endereço ${adresses[0].fullAddress} para o endereço ${adresses[1].fullAddress} é de ${calc}`;
 
-  return calc;
+  return result;
 }
 
 app.get("/result", (request, response) => {
