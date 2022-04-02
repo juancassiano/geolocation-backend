@@ -6,26 +6,21 @@ const LANGUAGE = "&Language=pt-BR";
 const BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
 const app = express();
 
-const adresses = [];
+const adresses:
+  | {
+      fullAddress: string;
+      latitude: number;
+      longitude: number;
+    }[] = [];
 
 app.use(express.json());
-
-app.get("/", async (request, response) => {
-  const geolocationURL = await axios(
-    `${BASE_URL}94 Rua Fernandes Gusmao, Rio De Janeiro,${LANGUAGE}
-    ${API_KEY}`
-  );
-  return response.json(geolocationURL.data.results[0].geometry.location);
-});
 
 app.post("/route", async (request, response) => {
   const { number, street, city, state } = request.body;
 
   const fullAddress = `${number} ${street}, ${city}, ${state}`;
   const fullAddressEncoded = encodeURI(fullAddress);
-  // const geolocationURL = await axios(
-  //   `${BASE_URL}${fullAddressEncoded}${LANGUAGE}${API_KEY}`
-  // );
+
   const geolocationURL = await axios(
     `${BASE_URL}${fullAddressEncoded}${LANGUAGE}${API_KEY}`
   );
@@ -34,12 +29,10 @@ app.post("/route", async (request, response) => {
 
   adresses.push({
     fullAddress,
-    fullAddressEncoded,
     latitude,
     longitude,
   });
   return response.status(201).send();
-  // return response.json(geolocationURL.data.results[0].geometry.location);
 });
 
 function calculateDistance() {
@@ -52,8 +45,9 @@ function calculateDistance() {
 }
 
 app.get("/result", (request, response) => {
-  const result = calculateDistance();
-  return response.json(result);
+  const distance = calculateDistance();
+
+  return response.json({ adresses, distance });
 });
 
 app.get("/route", async (request, response) => {
