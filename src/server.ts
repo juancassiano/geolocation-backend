@@ -11,6 +11,7 @@ const adresses:
       fullAddress: string;
       latitude: number;
       longitude: number;
+      distance?: number;
     }[] = [];
 
 app.use(express.json());
@@ -38,12 +39,12 @@ app.post("/route", async (request, response) => {
 function calculateDistance() {
   for (let i = 0; i < adresses.length; i++) {
     for (let j = 0; j < i; j++) {
-      const calc = Math.sqrt(
+      let distance = Math.sqrt(
         (adresses[i].latitude - adresses[i].longitude) ** 2 +
           (adresses[j].latitude - adresses[j].longitude) ** 2
       );
       console.log(
-        `Distância do endereço ${adresses[i].fullAddress} para o endereço ${adresses[j].fullAddress} é de ${calc}`
+        `Distância do endereço ${adresses[i].fullAddress} para o endereço ${adresses[j].fullAddress} é de ${distance}`
       );
     }
   }
