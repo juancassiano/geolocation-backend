@@ -36,13 +36,17 @@ app.post("/route", async (request, response) => {
 });
 
 function calculateDistance() {
-  const calc = Math.sqrt(
-    (adresses[0].latitude - adresses[0].longitude) ** 2 +
-      (adresses[1].latitude - adresses[1].longitude) ** 2
-  );
-  const result = `Distância do endereço ${adresses[0].fullAddress} para o endereço ${adresses[1].fullAddress} é de ${calc}`;
-
-  return result;
+  for (let i = 0; i < adresses.length; i++) {
+    for (let j = 0; j < i; j++) {
+      const calc = Math.sqrt(
+        (adresses[i].latitude - adresses[i].longitude) ** 2 +
+          (adresses[j].latitude - adresses[j].longitude) ** 2
+      );
+      console.log(
+        `Distância do endereço ${adresses[i].fullAddress} para o endereço ${adresses[j].fullAddress} é de ${calc}`
+      );
+    }
+  }
 }
 
 app.get("/result", (request, response) => {
