@@ -30,7 +30,7 @@ This API receives two or more address and return the distance between them, usin
 
 Receives the address to be able to use geolocation.
 
-| Parâmetro     | Tipo     | Descrição                                   |
+| Param         | Type     | Description                                   |
 | :----------   | :--------| :------------------------------------------ |
 | `number`      | `number` | **Obrigatório**. The number of address (Ex: 305) |
 | `street`      | `string` | **Obrigatório**. The name of street (Ex:Av Roma)|
@@ -69,12 +69,8 @@ The Function is: √(xLongitude - xLatitude )²+(yLongitude - yLatitude )²
   <img align="center" alt="Juan-VsCode" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg">
   <img align="center" alt="Juan-VsCode" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg">
   <img align="center" alt="Juan-VsCode" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/yarn/yarn-original.svg">
-  <img align="right" alt="Juan-GIF" height="150" style="border-radius:50px;" src="https://cdn.discordapp.com/attachments/768628359797407785/927646633691324486/Design_sem_nome.gif">
+
 </div>
-## Demonstração
-
-Insira um gif ou um link de alguma demonstração
-
 
 ## Autores
 
