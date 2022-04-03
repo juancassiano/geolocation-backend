@@ -3,11 +3,6 @@
 
 This API receives two or more address and return the distance between them, using the Euclidean Function
 
-## References
-
- - [Geolocation documentation](https://developers.google.com/maps/documentation/geocoding/start)
- - [Axios documentation](https://axios-http.com/ptbr/docs/intro) 
- - [Euclidean Function](https://pt.wikipedia.org/wiki/Dist%C3%A2ncia_euclidiana)
 ## API Documentation
 
 #### Return all addresses registered
@@ -39,25 +34,47 @@ Receives the address to be able to use geolocation.
 
 
 
+## Running My Project
 
-
-## Instalação
-
-Install my project with npm
+Clone the project
 
 ```bash
-  npm install 
-  cd geolocation
+  git clone git@github.com:juancassiano/geolocation-backend.git
 ```
-Install my project with yarn
+
+Entry in project directory
 
 ```bash
-  yarn install 
   cd geolocation
 ```
+
+Install the dependences
+
+```bash
+  npm install
+```
+```bash
+  yarn install
+```
+
+Start the server
+
+```bash
+  yarn dev
+```
+
+
 ## Euclidean Function
 
 The Function is: √(xLongitude - xLatitude )²+(yLongitude - yLatitude )²
+
+
+## References
+
+ - [Geolocation documentation](https://developers.google.com/maps/documentation/geocoding/start)
+ - [Axios documentation](https://axios-http.com/ptbr/docs/intro) 
+ - [Euclidean Function](https://pt.wikipedia.org/wiki/Dist%C3%A2ncia_euclidiana)
+
 
 
 ## Techs
