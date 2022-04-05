@@ -44,16 +44,25 @@ function calculateDistance() {
         (adresses[j].latitude - adresses[j].longitude) ** 2 +
           (adresses[i].latitude - adresses[i].longitude) ** 2
       );
+
+      let adress1 = adresses[j];
+      let adress2 = adresses[i];
       let result = `Distância do endereço ${adresses[j].fullAddress} para o endereço ${adresses[i].fullAddress} é de ${distance}`;
-      results.push(result);
+      results.push({
+        result,
+        distance,
+        adress1,
+        adress2,
+      });
+
+      results.sort((a, b) => a.distance - b.distance);
     }
   }
 }
 
 app.get("/result", (request, response) => {
   calculateDistance();
-
-  return response.json({ adresses, results });
+  return response.json({ results });
 });
 
 app.get("/route", async (request, response) => {
