@@ -11,6 +11,7 @@ const adresses:
       fullAddress: string;
       latitude: number;
       longitude: number;
+      results?: [];
     }[] = [];
 
 const results: [] = [];
@@ -33,6 +34,7 @@ app.post("/route", async (request, response) => {
     fullAddress,
     latitude,
     longitude,
+    results,
   });
   return response.status(201).send();
 });
@@ -45,6 +47,7 @@ function calculateDistance() {
           (adresses[i].latitude - adresses[i].longitude) ** 2
       );
       let result = `Distância do endereço ${adresses[j].fullAddress} para o endereço ${adresses[i].fullAddress} é de ${distance}`;
+      // results.sort(function (a, b) {return b - a;});
       results.push(result);
     }
   }
@@ -53,7 +56,7 @@ function calculateDistance() {
 app.get("/result", (request, response) => {
   const distance = calculateDistance();
 
-  return response.json({ adresses, results });
+  return response.json(adresses);
 });
 
 app.get("/route", async (request, response) => {
