@@ -13,7 +13,12 @@ const adresses:
       longitude: number;
     }[] = [];
 
-const results: [] = [];
+const results: {
+  result: string;
+  distance: number;
+  adress1: string;
+  adress2: string;
+}[] = [];
 
 app.use(express.json());
 
