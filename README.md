@@ -82,10 +82,10 @@ The Function is: √(xLongitude - xLatitude )²+(yLongitude - yLatitude )²
 <div style="display: inline_block"><br>
   <img align="center" alt="Juan-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
   <img align="center" alt="Juan-NodeJS" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg">
-  <img align="center" alt="Juan-NodeJS" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg">
+  <img align="center" alt="Juan-Git" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg">
   <img align="center" alt="Juan-VsCode" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg">
-  <img align="center" alt="Juan-VsCode" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg">
-  <img align="center" alt="Juan-VsCode" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/yarn/yarn-original.svg">
+  <img align="center" alt="Juan-Express" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg">
+  <img align="center" alt="Juan-Yarn" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/yarn/yarn-original.svg">
 
 </div>
 
